@@ -3,6 +3,7 @@ import { LightningElement } from 'lwc';
 export default class MainForm extends LightningElement {
     abbreivatedName = '';
     isNameEntered =false;
+    
 
 
     handleChildEvent(event){
@@ -10,5 +11,6 @@ export default class MainForm extends LightningElement {
         this.abbreivatedName = event.detail.shortName;
         this.isNameEntered = event.detail.isNameEntered;
         console.log(this.isNameEntered);
+        console.log('entered')
     }
 }
