@@ -1,0 +1,15 @@
+<template>
+    <div class="slds-carousel slds-var-p-around_medium slds-var-m-around_medium">
+        <div class="slds-carousel__stage">
+            <div class="slds-carousel__panels" style={panelStyle}>
+    <template for:each={imageList} for:item="item">
+      <div class="slds-carousel__panel" role="tabpanel" key={item.year}>
+          <div class="slds-carousel__image">
+            <img src={item.url} alt={item.altText} />
+          </div>
+      </div>
+    </template>
+</div>
+</div>
+</div>
+</template>

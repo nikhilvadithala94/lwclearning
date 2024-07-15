@@ -1,0 +1,48 @@
+<template>
+    <div class="currency-converter">
+        <div class="container">
+            <div class="slds-card custom-card">
+                <form onsubmit={submitHandler}>
+                    <h1 class="slds-text-heading_large slds-text-color_inverse 
+                    slds-text-align_center slds-m-bottom_large">Currency Converter</h1>
+                    <img src={currencyimg} alt="currencyImage" height="150px" width="150px"/>
+                    <lightning-input type="number" name="Amount" label="Amount" class="slds-m-vertical_x-large" variant="label-hidden" placeholder="Amount" onchange={handleChangeEvent}>
+                    </lightning-input>
+                    <div class="slds-grid slds-gutters baseline slds-m-vertical_x-larg">
+                        <div class="slds-col">
+                           <lightning-combobox
+                            name="fromCountry"
+                            label="From"
+                            variant="label-hidden"
+                            value={fromCountry}
+                            placeholder="Currency"
+                            options={options}
+                            onchange={handleChangeEvent} ></lightning-combobox>          
+                        </div>
+                        
+                        <div class="slds-col slds-text-align_center">
+                            <lightning-icon icon-name="action:change_record_type" alternative-text="convert currency" size="small" title="convert currency" class="custom-icon" onclick={shuffle}></lightning-icon>
+                        </div>
+                        <div class="slds-col">
+                            <lightning-combobox
+                            name="toCountry"
+                            label="To"
+                            variant="label-hidden"
+                            value={toCountry}
+                            placeholder="Currency"
+                            options={options}
+                            onchange={handleChangeEvent} ></lightning-combobox>  
+                        </div>
+                    </div>
+                    <template lwc:if={result}>
+                    <div class=" slds-text-align_center result"> {Amount} {fromCountry} - <span class="result-to">{result} {toCountry}</span></div>
+                    </template>
+                    <template lwc:if={error}>
+                    <div class="slds-text-align_center result">{error}</div>
+                    </template>
+                    <button type="submit" disabled={inputValid} class="slds-button slds-button_stretch custom-button">Convert</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</template>

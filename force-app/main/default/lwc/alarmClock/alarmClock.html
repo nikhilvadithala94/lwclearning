@@ -1,0 +1,24 @@
+<template>
+    <div class="alarm-card"> 
+        <h1> Alarm Clock</h1>
+        <img src={alarmImg} alt = "clock Image" height="200px" width="200px" class={addAnimation}/>
+        <h2>{currentTime}</h2>
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col">
+             <c-clock-drop-down value = {hours} label = 'Hour(s)' unique-id="id-hour" onoptionhandler={handleSelectEvent}></c-clock-drop-down>
+            </div>
+            <div class="slds-col">
+                <c-clock-drop-down value = {mins} label = 'Minute(s)' unique-id="id-minute" onoptionhandler={handleSelectEvent}></c-clock-drop-down>
+            </div>
+            <div class="slds-col">
+                <c-clock-drop-down value = {meridian} label = 'AM/PM' unique-id="id-meridian" onoptionhandler={handleSelectEvent}></c-clock-drop-down>
+            </div>
+        </div>
+            <template lwc:if={alarmEnabled}>
+                <button class="slds-button slds-button_neutral slds-button_stretch"  onclick={clearAlarmHandler}>Clear Alarm</button>
+            </template>
+            <template lwc:else>
+                <button class="slds-button slds-button_neutral slds-button_stretch" disabled={isTimeNotSelected} onclick={setAlarmHandler}>Set Alarm</button>
+            </template>
+    </div>
+</template>

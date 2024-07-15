@@ -1,0 +1,55 @@
+<template>
+    <div class="app flex-card">
+        <div class="card">
+            <header class="flex-card">
+                <template lwc:if={weatherInfo}>
+                <image src={arrow_backIcon} alt="back" onclick={handleClick} class="slds-m-around_medium cursor"></image>
+                </template>
+                <h1>Weather App</h1>
+            </header>
+            <template lwc:if={loadingMessage}>
+                <div class={msgClassStyle}>{loadingMessage}</div>
+            </template>
+            <template lwc:if={displayForm}>
+            <section class="slds-m-around_medium">
+                <form onsubmit={submitHandler}>
+                <input type="text" class="width-class" placeholder="Search City" onkeyup={handleChange} required spellcheck="false"/>
+                <button type="submit" class="slds-m-top_large width-class">Search</button>
+                </form>
+            </section>
+        </template>
+            <template lwc:if={weatherInfo}>
+            <section class="slds-m-around_large">
+                <img src={displayImage} alt="img" class="imageClass"/>
+                <div class="temparature">
+                    <span>{weatherInfo.temparature}</span>
+                    <span>°</span>C
+                </div>
+                <div class="description">
+                    {weatherInfo.description}
+                </div>
+                <div class="location">
+                    <img src={mapIcon} alt="location"/>
+                    <span>{weatherInfo.location}</span>
+                </div>
+            </section>
+            <footer>
+                <div class="foo1">
+                    <img src={thermometerIcon} alt="temparature"/>
+                     <div>
+                        <div>{weatherInfo.feels_like}<span>°</span>C</div>
+                        <p>Feels like</p>
+                     </div>
+                </div>
+                <div class="foo2">
+                    <image src={dropletIcon} alt="humidity"/>
+                    <div>
+                    <div>{weatherInfo.humidity}%</div>
+                    <p>humidity</p>
+                    </div>
+                </div>
+            </footer>
+        </template>
+        </div>
+    </div>
+</template>

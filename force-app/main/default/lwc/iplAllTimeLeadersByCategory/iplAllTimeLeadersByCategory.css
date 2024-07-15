@@ -1,0 +1,35 @@
+:host{
+    background: #081033;
+    display: block;
+    color: #ffff;
+    border-radius: 5px;
+    padding: 16px;
+}
+.slds-modal__container{
+    background: #081033;
+    display: block;
+    color: #ffff;
+    border-radius: 5px;
+    padding: 16px;
+}
+h2{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding:12px;
+
+}
+.cardStyle{
+    background: #00ff0a;
+    color: blue;
+    border-radius: 5px;
+    margin: 12px 0px;
+    padding:12px;
+
+}
+.bold-label{
+    font-weight: 700;
+    min-width: 70px;
+    text-transform: uppercase;
+}

@@ -1,0 +1,40 @@
+<template>
+    <main class="background-banner">
+        <header>
+           <h1> IPL T20 Dashboard</h1>
+        </header>
+        <section class="slds-grid slds-wrap slds-gutters">
+            <div class="slds-col slds-large-size--3-of-12 slds-small-size--1-of-1">
+                <template for:each={leftStats} for:item="left">
+                    <div class="slds-col statstile bluegrade" key={left.KPIUnit}>
+                        <p>{left.category}</p>
+                        <h3>{left.KPIValue}</h3>
+                        <p>{left.KPIUnit}</p>
+                    </div>
+                </template>
+            </div>
+            <div class="slds-col slds-large-size--6-of-12 slds-small-size--1-of-1">
+                <img src={winner} alt="winner2024" class="img"/>
+                <!--<lightning-carousel>
+                    <template for:each={carouselImgList} for:item="item">
+                        <lightning-carousel-image
+                            key={item.year}
+                            src={item.url}
+                            alt={item.altText}>
+                        </lightning-carousel-image>
+                        </template>
+                </lightning-carousel>-->
+                <c-carousel-child-component image-list = {carouselImgList}> </c-carousel-child-component>
+            </div>
+            <div class="slds-col slds-large-size--3-of-12 slds-small-size--1-of-1">
+                <template for:each={rightStats1} for:item="right">
+                    <div class="slds-col statstile pinkgrade" key={right.KPIUnit}>
+                        <p>{right.category}</p>
+                        <h3>{right.KPIValue}</h3>
+                        <p>{right.newKPI}</p>
+                    </div>
+                </template>
+            </div>
+        </section>
+    </main>
+</template>

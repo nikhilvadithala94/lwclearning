@@ -1,0 +1,44 @@
+<template>
+    <c-notification-handler></c-notification-handler>
+    <div class="app">
+        <div class="card box-center">
+            <div class="dotted-circle">
+                <lightning-icon icon-name="utility:add"  class='icon-class' alternative-text="new" title="new note" onclick={handleClick}></lightning-icon>
+            </div>
+            <h2 class="note-header">Add New Note</h2>
+        </div>
+        <template lwc:if={noteRecords}>
+        <template for:each={noteRecords} for:item="note">
+        <div class="card slds-var-m-bottom_medium" key ={note.Id}>
+            <header class="note-heading">
+            <h2>{note.Name}</h2>
+            </header>
+            <div class="note-content">
+                <lightning-formatted-rich-text value={note.Note_Description__c}></lightning-formatted-rich-text>
+            </div>
+            <footer class="note-footer">
+                <div>{note.modifiedDate}</div>
+                <div>
+                    <lightning-icon icon-name="action:edit" title="edit note" alternative-text="edit" size="xx-small" class="cursor" onclick={handleEdit} data-recordid ={note.Id} ></lightning-icon>
+                    <lightning-icon icon-name="action:delete" title="delete note" alternative-text="delete" class="cursor" size="xx-small" onclick={handleDelete} data-recordid ={note.Id}></lightning-icon>
+                </div>
+            </footer>
+    
+        </div>
+    </template>
+</template>
+    </div>
+    <template lwc:if={showModal}>
+    <c-note-modal>
+        <h1 slot="header" class="slds-modal__title">{noteAction}</h1>
+        <form>
+            <lightning-input type="text" label="Title" name="Name" value={noteRecord.Name} onchange={handleChange}></lightning-input>
+            <lightning-input-rich-text label="Description" value={noteRecord.Note_Description_c} name="Note_Description_c" formats={formats} label-visible onchange={handleChange}></lightning-input-rich-text>
+        </form>
+        <footer slot="footer">
+            <button class="slds-button slds-button_neutral" onclick={closeModal}>Cancel</button>
+            <button class="slds-button slds-button_brand" onclick={handleSave} disabled={isFormInvalid}>{noteAction}</button>
+        </footer>
+    </c-note-modal>
+</template>
+</template>

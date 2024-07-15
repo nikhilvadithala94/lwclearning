@@ -1,0 +1,27 @@
+<template>
+    <div class="slds-p-around_medium slds-align_absolute-center">
+        <h3>Welcome to my portfolio. Here you can perform various actions</h3>
+        </div>
+        <section>
+                <div class="slds-m-top_small slds-m-bottom_medium">
+                <lightning-button variant="base" label="Calculate BMI"
+                    title="BMI Calculate" onclick={handleClickBMI} class="slds-m-left_x-small slds-align_absolute-center">    
+                </lightning-button>
+                </div> 
+                <div class="slds-m-top_small slds-m-bottom_medium">
+                    <lightning-button variant="base" label="Set Alarm"
+                        title="AlarmClock" onclick={handleClickAlarm} class="slds-m-left_x-small slds-align_absolute-center">    
+                    </lightning-button>
+                </div> 
+                <div class="slds-m-top_small slds-m-bottom_medium">
+                    <lightning-button variant="base" label="Convert Currency"
+                        title="CurrencyConverter" onclick={handleCurrencyConversion} class="slds-m-left_x-small slds-align_absolute-center">    
+                    </lightning-button>
+                </div>
+                <div class="slds-m-top_small slds-m-bottom_medium">
+                    <lightning-button variant="base" label="Track Weather"
+                        title="WeatherTracker" onclick={handleWeatherTracker} class="slds-m-left_x-small slds-align_absolute-center">    
+                    </lightning-button>
+                </div>
+            </section>          
+</template>

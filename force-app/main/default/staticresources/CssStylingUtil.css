@@ -1,0 +1,9 @@
+.slds-carousel__content.content-container{
+    display: none !important;
+}
+.slds-carousel__autoplay{
+    display: none;
+}
+.slds-carousel__indicators{
+    display: none;
+}

@@ -1,0 +1,103 @@
+.app{
+    background: darkblue;
+    min-height: 100vh;
+}
+
+.card{
+    background: #ffffff;
+    max-width: 500px;
+    min-width: 370px;
+    border-radius: 8px;
+}
+.flex-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header{
+    font-size: 20px;
+    color: darkblue;
+    padding: 16px;
+    border-bottom: 1px solid #ccc;
+    font-weight: 700;
+}
+input{
+    text-align: center;
+    padding: 16px 0px;
+    height: 55px;
+    outline: none;
+    font-size: 24px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+input::placeholder{
+    color: #bfbfbf;
+}
+.width-class{
+    width: 100%;
+}
+
+button{
+    height: 55px;
+    font-size: 24px;
+    font-weight: 500;
+    border-radius: 8px;
+    background: orangered;
+    color: #fff;
+    border: none;
+    outline: none;
+}
+.msgclass{
+    padding: 8px;
+    margin: 8px;
+    font-size: 14px;
+    background: pink;
+    color: blueviolet;
+    text-align: center;
+    border-radius: 5px;
+}
+.errormsgclass{
+    padding: 8px;
+    margin: 14px;
+    font-size: 14px;
+    background: pink;
+    color: red;
+    text-align: center;
+    border-radius: 5px;
+}
+.description,.location{
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: normal;
+}
+.temparature{
+    font-size: 60px;
+    font-weight: 700;
+    text-align: center;
+    line-height: normal;
+}
+footer{
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid #CCC;
+}
+.foo1{
+    padding: 16px;
+    width: 100%;
+}
+.foo2{
+    padding: 16px;
+    border-left: 1px solid #ccc;
+    width: 100%;
+}
+.imageClass{
+    max-height: 120px;
+    max-width: 120px;
+    display: block;
+    margin: auto;
+}
+.cursor{
+    cursor :pointer;
+}

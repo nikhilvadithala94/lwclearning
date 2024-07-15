@@ -1,0 +1,22 @@
+img{
+    height: 350px;
+}
+.project{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: 8px;
+    text-align: center;
+    font-family: arial;
+}
+.card:hover {
+    opacity: 0.7;
+}
+.description{
+    color:navy;
+    background: #f6c813;
+    width:100%;
+    font-size: 18px;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}

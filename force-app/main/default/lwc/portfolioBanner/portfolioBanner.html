@@ -1,0 +1,48 @@
+<template>
+    <div class="banner">
+        <img src={userImage} alt="image" class="profile-pic"/>
+        <div class="name">
+            {fullName}
+        </div>
+        <div class="designation">
+            {designation} at {company}
+        </div>
+        <div class="location">
+            {location}
+        </div>
+
+        <div class="social-media">
+            <template lwc:if={linkedinURL}>
+            <a href={linkedinURL} target = '_blank'>
+            <img src={linkedin} class="social-icons"/>
+            </a>
+            </template>
+            <template lwc:if={twitterURL}>
+            <a href={twitterURL} target = '_blank'>
+            <img src={twitter} class="social-icons"/>
+            </a>
+             </template>
+
+            <template lwc:if={githuburl}>
+            <a href={githuburl} target = '_blank'>
+            <img src={github} class="social-icons"/>
+             </a>
+             </template>          
+            <template lwc:if={youtubeURL}>
+            <a href={youtubeurl} target = '_blank'>
+            <img src={youtube} class="social-icons"/>
+            </a>
+            </template>
+            <template lwc:if={trailheadURL}>
+            <a href={trailheadURL} target = '_blank'>
+            <img src={trailhead} class="social-icons"/>
+            </a>
+            </template>           
+            <template lwc:if={blogURL}>
+            <a href={blogurl} target = '_blank'>
+            <img src={blogger} class="social-icons"/>
+            </a>
+            </template>
+        </div>
+    </div>
+</template>

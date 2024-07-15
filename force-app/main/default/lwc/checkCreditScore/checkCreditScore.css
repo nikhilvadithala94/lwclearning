@@ -1,0 +1,10 @@
+.errorclass{
+    color: red;
+    text-align: center;
+    font-size: 15px;
+}
+.success{
+    color: blue;
+    text-align: center;
+    font-size: 15px;
+}

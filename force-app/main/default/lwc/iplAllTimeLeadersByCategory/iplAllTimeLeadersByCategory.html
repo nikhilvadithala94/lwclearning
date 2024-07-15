@@ -1,0 +1,166 @@
+<template>
+    <template lwc:if={isDesktop}>
+    <h2>{headerInfo}</h2>
+    <div class="slds-grid slds-wrap slds-gutters">
+        <template for:each={statsByCategory} for:item="stats">
+            <div key={stats.PlayerId} class="slds-col slds-size_12-of-12">
+                <div class="cardStyle">
+                    <div class="slds-grid">
+                    <div class="slds-col slds-size_2-of-12">                       
+                            <img src={stats.img} onerror={handleError}/>
+                        </div>
+                    <div class="slds-col slds-size_6-of-12">
+                        <div class="slds-grid">
+                            <span class="bold-label">POS</span>
+                            <span>{stats.position}</span>
+                        </div>
+                        <div class="slds-grid">
+                            <span class="bold-label">Player</span>
+                            <span>{stats.StrikerName}</span>
+                        </div>
+                        <div class="slds-grid">
+                            <span class="bold-label">Match</span>
+                            <span>{stats.Matches}</span>
+                        </div>
+                        <div class="slds-grid" lwc:if={isBatsmen}>
+                            <span class="bold-label">Runs</span>
+                            <span>{stats.TotalRuns}</span>
+                        </div>
+                        <div class="slds-grid" lwc:if={isBatsmen}>
+                            <span class="bold-label">HS</span>
+                            <span>{stats.HighestScore}</span>
+                        </div>
+                        <div class="slds-grid" lwc:if={isBatsmen}>
+                            <span class="bold-label">Average</span>
+                            <span>{stats.BattingAverage}</span>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_4-of-12">
+                        <div class="slds-grid" lwc:if={isBowler}>
+                            <span class="bold-label">wickets</span>
+                            <span>{stats.Wickets}</span>
+                        </div>
+                        <div class="slds-grid" lwc:if={isBatsmen}>
+                            <span class="bold-label">fours</span>
+                            <span>{stats.Fours}</span>
+                        </div>
+                        <div class="slds-grid" lwc:if={isBatsmen}>
+                            <span class="bold-label">sixes</span>
+                            <span>{stats.Sixes}</span>
+                        </div>
+                        <div class="slds-grid">
+                            <span class="bold-label">SR</span>
+                            <span>{stats.StrikeRate}</span>
+                        </div>
+                        <div class="slds-grid" lwc:if={isBowler}>
+                            <span class="bold-label">BBI</span>
+                            <span>{stats.BBIW}</span>
+                        </div>
+                        <div class="slds-grid" lwc:if={isBowler}>
+                            <span class="bold-label">ER</span>
+                            <span>{stats.EconomyRate}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </template>
+    </div>
+</template>
+<template lwc:else>
+    <template if:true={isShowModal}>
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+           <div class="slds-modal__container">
+            <!-- modal header start -->
+            <header class="slds-modal__header">
+                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={hideModalBox}>
+                   <lightning-icon icon-name="utility:close"
+                      alternative-text="close"
+                      variant="inverse"
+                      size="small" ></lightning-icon>
+                   <span class="slds-assistive-text">Close</span>
+                </button>
+                <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Welcome in Apex Hours</h2>
+             </header>           
+              <!-- modal body start -->
+              <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                <div class="slds-grid slds-wrap slds-gutters">
+                    <template for:each={statsByCategory} for:item="stats">
+                        <div key={stats.PlayerId} class="slds-col slds-size_12-of-12">
+                            <div class="cardStyle">
+                                <div class="slds-grid">
+                                <div class="slds-col slds-size_2-of-12">                       
+                                        <img src={stats.img} onerror={handleError}/>
+                                    </div>
+                                <div class="slds-col slds-size_6-of-12">
+                                    <div class="slds-grid">
+                                        <span class="bold-label">POS</span>
+                                        <span>{stats.position}</span>
+                                    </div>
+                                    <div class="slds-grid">
+                                        <span class="bold-label">Player</span>
+                                        <span>{stats.StrikerName}</span>
+                                    </div>
+                                    <div class="slds-grid">
+                                        <span class="bold-label">Matches</span>
+                                        <span>{stats.Matches}</span>
+                                    </div>
+                                    <div class="slds-grid" lwc:if={isBatsmen}>
+                                        <span class="bold-label">Runs</span>
+                                        <span>{stats.TotalRuns}</span>
+                                    </div>
+                                    <div class="slds-grid" lwc:if={isBatsmen}>
+                                        <span class="bold-label">HS</span>
+                                        <span>{stats.HighestScore}</span>
+                                    </div>
+                                    <div class="slds-grid" lwc:if={isBatsmen}>
+                                        <span class="bold-label">Average</span>
+                                        <span>{stats.BattingAverage}</span>
+                                    </div>
+                                </div>
+                                <div class="slds-col slds-size_4-of-12">
+                                    <div class="slds-grid" lwc:if={isBowler}>
+                                        <span class="bold-label">Wickets</span>
+                                        <span>{stats.Wickets}</span>
+                                    </div>
+                                    <div class="slds-grid" lwc:if={isBatsmen}>
+                                        <span class="bold-label">fours</span>
+                                        <span>{stats.Fours}</span>
+                                    </div>
+                                    <div class="slds-grid" lwc:if={isBatsmen}>
+                                        <span class="bold-label">sixes</span>
+                                        <span>{stats.Sixes}</span>
+                                    </div>
+                                    <div class="slds-grid">
+                                        <span class="bold-label">SR</span>
+                                        <span>{stats.StrikeRate}</span>
+                                    </div>
+                                    <div class="slds-grid" lwc:if={isBowler}>
+                                        <span class="bold-label">BBI</span>
+                                        <span>{stats.BBIW}</span>
+                                    </div>
+                                    <div class="slds-grid" lwc:if={isBowler}>
+                                        <span class="bold-label">ER</span>
+                                        <span>{stats.EconomyRate}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </template>
+                </div>
+              </div>
+              <!-- modal footer start-->
+              <footer class="slds-modal__footer">
+                 <button class="slds-button slds-button_neutral" onclick={hideModalBox}>Cancel</button>
+              </footer>
+           
+           </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+
+     <!-- modal end -->
+      </template>
+    
+</template>
+</template>

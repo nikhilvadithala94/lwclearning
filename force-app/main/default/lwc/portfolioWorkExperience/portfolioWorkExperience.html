@@ -1,0 +1,49 @@
+<template>
+    <ul class="slds-timeline">
+        <template for:each={workExperience} for:item="exp">
+        <li key={exp.id}>
+        <div class="slds-timeline__item_expandable slds-timeline__item_task slds-is-open">
+        <div class="slds-media">
+        <div class="slds-media__figure">
+        <button class="slds-button slds-button_icon" >
+            <lightning-icon icon-name="utility:switch" size="x-small"  alternative-text="switch" title="switch">
+            </lightning-icon>
+        </button>
+        <div class="slds-icon_container slds-icon-standard-task slds-timeline__icon" title="task">
+            <lightning-icon icon-name="action:new_task" size="small" alternative-text="task" title="task">
+            </lightning-icon>
+        </div>
+        </div>
+        <div class="slds-media__body">
+        <div class="slds-grid slds-grid_align-spread slds-timeline__trigger">
+        <div class="slds-grid slds-grid_vertical-align-center slds-truncate_container_75 slds-no-space">
+        
+        <h3 class="slds-truncate" title={exp.Role__c}>
+        <strong>{exp.role}</strong>
+        </h3>
+        </div>
+        <div class="slds-timeline__actions slds-timeline__actions_inline">
+        <template lwc:if={exp.isCurrent}>
+        <p class="slds-timeline__date">{exp.startDate} - Current</p>
+        </template>
+        <template lwc:else>
+        <p class="slds-timeline__date">{exp.startDate} - {exp.endDate}</p>
+        </template>
+        </div>
+        </div>
+        <p class="slds-m-horizontal_xx-small">
+            {exp.company} {exp.Location}
+        </p>
+        <article class="slds-box slds-timeline__item_details slds-theme_shade slds-m-top_x-small slds-m-horizontal_xx-small slds-p-around_medium" id="task-item-expanded-73">
+        <div>
+            <lightning-formatted-rich-text value={exp.description}></lightning-formatted-rich-text>
+        </div>
+        </article>
+        </div>
+        </div>
+        </div>
+        </li>
+        </template>
+        </ul>
+ 
+</template>

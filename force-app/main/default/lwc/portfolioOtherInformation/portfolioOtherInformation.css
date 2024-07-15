@@ -1,0 +1,29 @@
+.container{
+    display: flex;
+    padding: 16px;
+    background: #ffdf7b;
+    border-radius: 8px;
+    justify-content: left;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    align-items: center;
+}
+img{
+    height: 60px;
+    margin-right: 12px;
+}
+p{
+    font-size: 16px;
+    color: #000;
+    font-weight: 600;
+}
+h2{
+    background: navy;
+    padding: 8px;
+    color: #fff;
+    border-radius: 8px;
+}
+.container:hover{
+    background-color: #d8d8d8;
+    cursor: pointer;
+}

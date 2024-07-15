@@ -1,0 +1,34 @@
+<template>
+    <div class="app">
+        <div class="card-body">
+        <lightning-card  variant="Narrow"  title="Check Live Train Status" icon-name="custom:custom36">
+           <div class="slds-var-p-around_medium">
+            <lightning-input type="text" label="Enter Train No" value={trainNumber} onchange={handleChange} placeholder='enter 5 digit number ex: 12345 ,14568 ,19008'></lightning-input>
+            </div>
+            <div class="slds-var-p-around_medium">
+            <lightning-button class="slds_p_around-small" label="Search" onclick={handleClick} variant="brand"></lightning-button>
+            </div> 
+            <template lwc:if={showSpinner}>       
+            <div class="slds-var-p-around_medium">
+                <lightning-spinner alternative-text="Loading"></lightning-spinner>
+            </div>
+            </template>
+            <template lwc:if={showDataTable}>
+            <div class="slds-var-p-around_medium">
+                <div class="slds-text-heading_large slds-text-color_success slds-text-align_center"> {trainDetails.train_name}</div>
+                <div class = 'slds-text-heading_small slds-text-align_center'>{trainDetails.message}</div>
+                <div class="slds-text-title slds-text-align_center">{trainDetails.updated_time}</div>
+                <div style="height: 300px slds-var-p-top_small">
+                    <lightning-datatable
+                        key-field="train_name"
+                        data={trainDetails.data}
+                        columns={columns}
+                        hide-checkbox-column = true>
+                    </lightning-datatable>
+                </div>
+            </div>
+        </template>
+        </lightning-card>
+    </div>
+    </div>
+</template>

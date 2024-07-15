@@ -1,0 +1,47 @@
+:host{
+    background-color: #081033;
+    display: block;
+    color: #fff;
+    border-radius: 12px;
+    padding: 16px;
+
+}
+.background-banner{
+    background-image: url(/resource/IPL_Images_and_logos/IPL_Images_and_logos/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+h1{
+    font-weight: 500;
+    font-size: 30px;
+    text-align: center;
+    padding: 16px;
+}
+.statstile{
+    background: blueviolet;
+    min-width: 200px;
+    border-radius: 5px;
+    padding: 12px;
+    text-align: center;
+    margin-bottom: 12px;
+    font-size: 16px;
+
+}
+.statstile h3{
+    font-size: 36px;
+}
+
+.bluegrade{
+    background: rgb(2,0,36);
+    background: linear-gradient(11deg, rgba(2,0,36,1) 0%, rgba(0,151,255,0.955641631652661) 100%, rgba(0,212,255,1) 100%);
+}
+
+.pinkgrade{
+    background: rgb(63,43,47);
+background: linear-gradient(11deg, rgba(63,43,47,1) 0%, rgba(255,192,203,1) 100%, rgba(0,212,255,1) 100%);
+}
+.img{
+    display: block;
+    margin: auto;
+    padding:16px;
+}

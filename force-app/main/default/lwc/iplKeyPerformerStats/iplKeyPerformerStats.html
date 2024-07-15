@@ -1,0 +1,14 @@
+<template>
+    <section>
+    <div class={cardStyle}>
+    <div class="slds-col slds-size_6-of-12">
+        <img src={getImage} alt = "{keyStat.Name}"/>
+    </div>
+    <div class="slds-col slds-size_6-of-12">
+        <p class="categorystyle">{keyStat.category}</p>
+        <p class="nameStyle">{keyStat.name}</p>
+        <p class="valueStyle"> {keyStat.KPIValue} {keyStat.KPIUnit}</p>
+    </div>
+    </div>
+</section>
+</template>

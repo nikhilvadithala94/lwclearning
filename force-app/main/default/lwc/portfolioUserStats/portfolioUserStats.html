@@ -1,0 +1,25 @@
+<template>
+    <lightning-layout multiple-rows>
+        <lightning-layout-item size="12" small-device-size="4" medium-device-size="3">
+            <img src={trailheadLogo} alt="trailheadlogo"/>
+        </lightning-layout-item>
+        <lightning-layout-item size="12" small-device-size="4" medium-device-size="3">
+            <div>
+                <h3>Badges</h3>
+                <p>{totalBadges}</p>
+            </div>
+        </lightning-layout-item>
+        <lightning-layout-item size="12" small-device-size="4" medium-device-size="3">
+            <div>
+                <h3>Points</h3>
+                <p>{totalPoints}</p>
+            </div>
+        </lightning-layout-item>
+        <lightning-layout-item size="12" small-device-size="4" medium-device-size="3">
+            <div>
+                <h3>Trails</h3>
+                <p>{trails}</p>
+            </div>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

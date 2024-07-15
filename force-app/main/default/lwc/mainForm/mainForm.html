@@ -1,0 +1,8 @@
+<template>
+    <c-childform onchildevent={handleChildEvent}></c-childform>
+    <div class="slds-var-p-around_medium slds-var-m-bottom_medium">
+        <template lwc:if={isNameEntered} >
+            <b>{abbreivatedName}</b>
+        </template>
+    </div>
+</template>

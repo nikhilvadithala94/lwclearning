@@ -1,0 +1,16 @@
+<template>
+    <template lwc:if={getUserCreditScore}>
+    <lightning-card title="Check Eligibility" icon-name="utility:check" class ="slds-theme_default">
+        <lightning-layout horizontal-align="center" >
+                <h3 class="success">You are eligible for loan</h3>
+     </lightning-layout>
+    </lightning-card>
+    </template>
+    <template lwc:else>
+        <lightning-card title="Check Eligibility" icon-name="utility:error" class="slds-theme_default">
+            <lightning-layout horizontal-align="center" class="slds-p-around_medium">
+                    <h3 class="errorclass">Uh Oh you are not eligible for loan as your credit score is low</h3>
+         </lightning-layout>
+        </lightning-card>
+    </template>
+</template>

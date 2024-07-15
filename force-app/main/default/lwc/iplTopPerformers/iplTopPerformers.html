@@ -1,0 +1,12 @@
+<template>
+        <h2>IPL 2024 Key Performers</h2>
+        <div class="slds-grid slds-wrap">
+            <template for:each={keyStats} for:item="keystat">
+                <div key={keystat.KPIUnit} class="slds-col slds-size_12-of-12">
+                    <c-ipl-key-performer-stats
+                        key-stat={keystat}
+                    ></c-ipl-key-performer-stats>
+                </div>
+            </template>
+        </div>
+</template>

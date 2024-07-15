@@ -1,0 +1,43 @@
+<template>
+    <div class ="recform">
+    <div class="slds-var-p-around_medium">
+        <h3> Are you an existing Demat Account Customer?</h3>
+        <lightning-button-group class="slds-var-p-around_medium">
+            <lightning-button label="Yes" onclick={handleClickYes}></lightning-button>
+            <lightning-button label="No" onclick={handleClickNo}></lightning-button>
+        </lightning-button-group>
+    </div>
+    <template lwc:if={isCustomer}>
+        <div class="slds-var-p-around_medium">
+            <h2>Thank you for being a valueble customer</h2>
+        </div>
+    </template>
+    <template lwc:if={isNewCustomer}>
+        <lightning-record-edit-form
+        object-api-name={objectApiName}
+        onsuccess={handleSuccess}>
+        <lightning-messages></lightning-messages>
+        <div class="slds-m-around_medium slds-p-around_medium slds-grid slds-wrap slds-form_horizontal slds-form">
+            <lightning-input-field field-name={Name} class="slds-col slds-size_6-of-12"></lightning-input-field>
+            <lightning-input-field field-name={Email} class="slds-col slds-size_6-of-12"></lightning-input-field>
+            <lightning-input-field field-name={DateofBirth} class="slds-col slds-size_6-of-12" required="true"></lightning-input-field>
+            <lightning-input-field field-name={Depository} class="slds-col slds-size_6-of-12"></lightning-input-field>
+            <lightning-input-field field-name={AccountType} class="slds-col slds-size_6-of-12"></lightning-input-field>
+            <lightning-input-field field-name={Mobile} class="slds-col slds-size_6-of-12"></lightning-input-field>
+            <lightning-input-field field-name={AccountPlan} class="slds-col slds-size_6-of-12"></lightning-input-field>
+            <lightning-input-field field-name={SecondaryAccountHolder} class="slds-col slds-size_6-of-12"></lightning-input-field>
+            <lightning-input-field field-name={AnnualIncome} class="slds-col slds-size_6-of-12"></lightning-input-field>
+            </div>
+            <div class="slds-m-around_medium  slds-p-around_medium">
+                <lightning-button
+                    variant="brand"
+                    type="submit"
+                    name="Save"
+                    class="slds-align_absolute-center"
+                    label="Create Account">
+                </lightning-button>
+            </div>
+    </lightning-record-edit-form>
+    </template>
+</div>
+</template>
