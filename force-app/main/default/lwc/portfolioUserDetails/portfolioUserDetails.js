@@ -18,7 +18,7 @@ export default class PortfolioUserDetails extends  NavigationMixin(LightningElem
         if(data){ 
             console.log(data)
             let key = Object.keys(data)[0]
-            this.url = `/sfc/servlet.shepherd/document/download/${key}`
+            this.url = `https://nikhilv23-dev-ed.develop.my.site.com/MyPortfolio/sfc/servlet.shepherd/document/download/${key}`
         }
         if(error){ 
             console.log(error)
@@ -26,7 +26,9 @@ export default class PortfolioUserDetails extends  NavigationMixin(LightningElem
     }
 
 
-   // download(){
+    download(){
+        window.open(this.url,"_blank")
+    }
        /* getResumeAsAttachment({recordId : this.recordId}).then(
             result => {
                 this.handleFormatAttachment(result)
