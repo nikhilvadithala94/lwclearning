@@ -47,7 +47,7 @@ export default class PortfolioTabsWrapper extends LightningElement {
 
     
     handleToggle(event){
-        const activeSections = event.target.name;
+        const activeSections = event.detail.openSections;
         this.acc1 = activeSections.includes('Summary')
         this.acc2 = activeSections.includes('Personal_Projects')
         this.acc3 = activeSections.includes('Work_Experience')
