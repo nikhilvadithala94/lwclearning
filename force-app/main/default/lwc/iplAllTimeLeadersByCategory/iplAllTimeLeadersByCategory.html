@@ -1,5 +1,6 @@
 <template>
     <template lwc:if={isDesktop}>
+    <div class="desktop-container">
     <h2>{headerInfo}</h2>
     <div class="slds-grid slds-wrap slds-gutters">
         <template for:each={statsByCategory} for:item="stats">
@@ -66,33 +67,27 @@
             </div>
         </template>
     </div>
+</div>
 </template>
+
 <template lwc:else>
     <template if:true={isShowModal}>
-        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
-           <div class="slds-modal__container">
-            <!-- modal header start -->
-            <header class="slds-modal__header">
-                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={hideModalBox}>
-                   <lightning-icon icon-name="utility:close"
-                      alternative-text="close"
-                      variant="inverse"
-                      size="small" ></lightning-icon>
-                   <span class="slds-assistive-text">Close</span>
-                </button>
-                <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Welcome in Apex Hours</h2>
-             </header>           
-              <!-- modal body start -->
-              <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+            <div class="slds-modal__header">
+                <h2 class="slds-text-heading_medium">{headerInfo}</h2>
+            </div>
+              <!-- modal body start --> 
+              <div class="slds-modal__content slds-p-around_medium">
                 <div class="slds-grid slds-wrap slds-gutters">
                     <template for:each={statsByCategory} for:item="stats">
                         <div key={stats.PlayerId} class="slds-col slds-size_12-of-12">
                             <div class="cardStyle">
                                 <div class="slds-grid">
-                                <div class="slds-col slds-size_2-of-12">                       
+                                <div class="slds-col slds-size_4-of-12">                       
                                         <img src={stats.img} onerror={handleError}/>
                                     </div>
-                                <div class="slds-col slds-size_6-of-12">
+                                <div class="slds-col slds-size_8-of-12">
                                     <div class="slds-grid">
                                         <span class="bold-label">POS</span>
                                         <span>{stats.position}</span>
@@ -117,8 +112,6 @@
                                         <span class="bold-label">Average</span>
                                         <span>{stats.BattingAverage}</span>
                                     </div>
-                                </div>
-                                <div class="slds-col slds-size_4-of-12">
                                     <div class="slds-grid" lwc:if={isBowler}>
                                         <span class="bold-label">Wickets</span>
                                         <span>{stats.Wickets}</span>
@@ -143,7 +136,7 @@
                                         <span class="bold-label">ER</span>
                                         <span>{stats.EconomyRate}</span>
                                     </div>
-                                </div>
+                            </div>
                             </div>
                         </div>
                         </div>
@@ -157,7 +150,7 @@
            
            </div>
         </section>
-        <div class="slds-backdrop slds-backdrop_open"></div>
+        <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
 
      <!-- modal end -->
       </template>
