@@ -1,5 +1,6 @@
 <template>
     <template lwc:if={isDesktop}>
+    <div class="desktop-container">
     <h2>{headerInfo}</h2>
     <div class="slds-grid slds-wrap slds-gutters">
         <template for:each={statsByCategory} for:item="stats">
@@ -66,13 +67,15 @@
             </div>
         </template>
     </div>
+</div>
 </template>
+
 <template lwc:else>
     <template if:true={isShowModal}>
         <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
             <div class="slds-modal__container">
-            <div class="slds-modal__header slds-modal__title">
-                <h2>{headerInfo}</h2>
+            <div class="slds-modal__header">
+                <h2 class="slds-text-heading_medium">{headerInfo}</h2>
             </div>
               <!-- modal body start --> 
               <div class="slds-modal__content slds-p-around_medium">
@@ -81,10 +84,10 @@
                         <div key={stats.PlayerId} class="slds-col slds-size_12-of-12">
                             <div class="cardStyle">
                                 <div class="slds-grid">
-                                <div class="slds-col slds-size_2-of-12">                       
+                                <div class="slds-col slds-size_4-of-12">                       
                                         <img src={stats.img} onerror={handleError}/>
                                     </div>
-                                <div class="slds-col slds-size_6-of-12">
+                                <div class="slds-col slds-size_8-of-12">
                                     <div class="slds-grid">
                                         <span class="bold-label">POS</span>
                                         <span>{stats.position}</span>
@@ -109,8 +112,6 @@
                                         <span class="bold-label">Average</span>
                                         <span>{stats.BattingAverage}</span>
                                     </div>
-                                </div>
-                                <div class="slds-col slds-size_4-of-12">
                                     <div class="slds-grid" lwc:if={isBowler}>
                                         <span class="bold-label">Wickets</span>
                                         <span>{stats.Wickets}</span>
@@ -135,7 +136,7 @@
                                         <span class="bold-label">ER</span>
                                         <span>{stats.EconomyRate}</span>
                                     </div>
-                                </div>
+                            </div>
                             </div>
                         </div>
                         </div>

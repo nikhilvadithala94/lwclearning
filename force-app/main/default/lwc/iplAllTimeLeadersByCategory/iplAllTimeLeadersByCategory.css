@@ -1,17 +1,11 @@
-:host{
+.desktop-container{
     background: #081033;
     display: block;
     color: #ffff;
     border-radius: 5px;
     padding: 16px;
 }
-.slds-modal__container{
-    background: #081033;
-    display: block;
-    color: #ffff;
-    border-radius: 5px;
-    padding: 16px;
-}
+
 h2{
     text-align: center;
     font-size: 18px;
@@ -21,15 +15,59 @@ h2{
 
 }
 .cardStyle{
-    background: #00ff0a;
+    background: #f6c803;
     color: blue;
     border-radius: 5px;
     margin: 12px 0px;
     padding:12px;
 
 }
+
+@media only screen and (max-width: 1024px) {
+    .cardStyle{
+        margin: 6px;
+        padding: 8px;
+        background: #f6c803;
+        color: blue;
+        border-radius: 5px;
+    }
+}
+
 .bold-label{
     font-weight: 700;
     min-width: 70px;
     text-transform: uppercase;
 }
+
+.slds-modal__container {
+        width: 100%;
+        max-width: 40rem; /* Default max-width for larger screens */
+        max-height: 100vh; /* Ensure modal doesn't exceed viewport height */
+        display: flex;
+        flex-direction: column;
+    }
+    
+
+
+
+@media only screen and (max-width: 480px) {
+    .slds-modal__container {
+        max-width: 20rem;
+        max-height: 90vh;
+
+    }
+}
+
+/*@media only screen and (max-width: 768px) {
+    .slds-modal__container {
+        padding: 2rem;
+        max-width: 80%;
+    }
+}
+
+@media only screen and (min-width: 769px) {
+    .slds-modal__container {
+        padding: 3rem;
+        max-width: 60%;
+    }
+}*/
